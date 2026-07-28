@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIDEX 长期居留填写指南 — [YOUR NAME] / §18d / CSC</title>
+  <style>
+    :root {
+      --bg: #f4f6f9;
+      --card: #ffffff;
+      --text: #1a1a2e;
+      --muted: #5c6370;
+      --accent: #1e4d7b;
+      --accent-light: #e8f0f8;
+      --warn: #b45309;
+      --warn-bg: #fffbeb;
+      --ok: #166534;
+      --ok-bg: #ecfdf5;
+      --xhs: #ff2442;
+      --xhs-bg: #fff5f6;
+      --border: #dde4ea;
+      --link: #2563eb;
+      --fill: #0f766e;
+      --fill-bg: #f0fdfa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      margin: 0;
+      padding: 2rem 1rem 4rem;
+    }
+    .container { max-width: 960px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, #1e4d7b 0%, #2d6a9f 100%);
+      color: #fff;
+      padding: 2rem 2.2rem;
+      border-radius: 12px;
+      margin-bottom: 1.25rem;
+    }
+    header h1 { margin: 0 0 0.45rem; font-size: 1.55rem; font-weight: 700; }
+    header p { margin: 0.25rem 0; opacity: 0.93; font-size: 0.95rem; }
+    .meta { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.15rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+    }
+    nav.toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.3rem;
+      margin-bottom: 1rem;
+      font-size: 0.92rem;
+    }
+    nav.toc ol { margin: 0.4rem 0 0; padding-left: 1.3rem; }
+    nav.toc a { color: var(--accent); text-decoration: none; }
+    nav.toc a:hover { text-decoration: underline; }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.8rem 0 0;
+    }
+    .tab-pill {
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid #c5d9ed;
+      border-radius: 8px;
+      padding: 0.45rem 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.35rem 1.55rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      color: var(--accent);
+      font-size: 1.15rem;
+      margin: 0 0 0.9rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 2px solid var(--accent-light);
+    }
+    h3 { font-size: 1rem; margin: 1.1rem 0 0.5rem; color: var(--text); }
+    p, li { font-size: 0.93rem; }
+    ul, ol { padding-left: 1.35rem; }
+    li { margin-bottom: 0.3rem; }
+    a { color: var(--link); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 0.7rem 0;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.7rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: var(--accent-light); color: var(--accent); font-weight: 600; width: 32%; }
+    td.fill {
+      background: var(--fill-bg);
+      color: var(--fill);
+      font-weight: 600;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.86rem;
+    }
+    .callout {
+      border-radius: 8px;
+      padding: 0.85rem 1.05rem;
+      margin: 0.9rem 0;
+      font-size: 0.9rem;
+    }
+    .callout-warn { background: var(--warn-bg); border-left: 4px solid var(--warn); }
+    .callout-ok { background: var(--ok-bg); border-left: 4px solid var(--ok); }
+    .callout-info { background: var(--accent-light); border-left: 4px solid var(--accent); }
+    .callout-xhs { background: var(--xhs-bg); border-left: 4px solid var(--xhs); }
+    code, .mono {
+      font-family: Consolas, "Courier New", monospace;
+      background: #f1f5f9;
+      padding: 0.05rem 0.35rem;
+      border-radius: 4px;
+      font-size: 0.86rem;
+    }
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      padding: 0.35rem 0 0.35rem 1.6rem;
+      position: relative;
+      border-bottom: 1px dashed var(--border);
+    }
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    footer {
+      margin-top: 1.5rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .step-num {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 1.5rem;
+      font-size: 0.85rem;
+      margin-right: 0.35rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <div style="background:#fff8e8;border:1px solid #f0d58a;border-radius:10px;padding:0.85rem 1rem;margin:0 0 1rem;font-size:0.9rem;color:#6b4a00;">
+      <strong>公开匿名版：</strong>已隐去申请人姓名、护照号、电话、邮箱、住址、父母信息等。
+      绿色示例值为<strong>填写格式示范</strong>，请换成你自己的护照 / HA / 邀请信信息。不构成法律意见；以德国使领馆 / VFS 官网为准。
+      <a href="./index.html">← 返回递签攻略首页</a>
+    </div>
+
+<header>
+      <h1>VIDEX 长期居留填写指南</h1>
+      <p>对照官网表格结构：<strong>Langfristiger Aufenthalt</strong>（六大标签页）</p>
+      <p>公开匿名版 · 签证目的：§18d 研究人员 · CSC 联培/访学 · 请用你自己的护照与 HA 信息替换绿色示例。</p>
+      <div class="meta">
+        <span class="tag">递签约 2026-07-27（上海）</span>
+        <span class="tag">HA / 邀请信：01.10.2026–30.09.2027</span>
+        <span class="tag">VIDEX：25.09.2026–24.09.2027</span>
+        <span class="tag">保险起期：25.09.2026</span>
+        <span class="tag">最终核对：2026-07-22</span>
+      </div>
+    </header>
+
+    <nav class="toc">
+      <strong>目录（与 VIDEX 标签页一致）</strong>
+      <div class="tabs">
+        <span class="tab-pill">1 Angaben zur Person</span>
+        <span class="tab-pill">2 Kontaktdaten</span>
+        <span class="tab-pill">3 Ausweispapiere</span>
+        <span class="tab-pill">4 Reisedaten</span>
+        <span class="tab-pill">5 Referenz</span>
+        <span class="tab-pill">6 Lebensunterhalt</span>
+      </div>
+      <ol>
+        <li><a href="#start">入口与通用规则</a></li>
+        <li><a href="#tab1">标签页 1：Angaben zur Person</a></li>
+        <li><a href="#tab2">标签页 2：Kontaktdaten</a></li>
+        <li><a href="#tab3">标签页 3：Ausweispapiere</a></li>
+        <li><a href="#tab4">标签页 4：Reisedaten</a></li>
+        <li><a href="#tab5">标签页 5：Referenz</a></li>
+        <li><a href="#tab6">标签页 6：Lebensunterhalt</a></li>
+        <li><a href="#print">保存、打印与签名</a></li>
+        <li><a href="#align">与 HA / 邀请信对齐清单</a></li>
+      </ol>
+    </nav>
+
+    <section id="start">
+      <h2><span class="step-num">0</span>入口与通用规则</h2>
+      <p>
+        官方入口（务必选<strong>长期</strong>，不要选短期申根）：
+        <a href="https://videx.diplo.de/videx/visum-erfassung/de/videx-langfristiger-aufenthalt" target="_blank" rel="noopener">
+          videx.diplo.de → Langfristiger Aufenthalt
+        </a>
+      </p>
+      <div class="callout callout-warn">
+        <strong>不要用</strong> Kurzfristiger Aufenthalt（最多 90 天）。研究人员 / CSC 联培走长期表。
+      </div>
+      <ul>
+        <li>页面可切换 <strong>Deutsch / English</strong>；字段内容用<strong>拉丁字母</strong>填写，与护照一致，<strong>禁止中文</strong>。</li>
+        <li>日期格式：<code>TT.MM.JJJJ</code>（例：<code>01.10.2026</code>）。</li>
+        <li>带 <code>*</code> 为必填；顶部有 <strong>Speichern</strong>（保存）/ <strong>Weiter</strong>（继续）。</li>
+        <li>可随时 <strong>Speichern</strong> 下载草稿；改天用 <strong>Daten importieren</strong> 上传恢复（无云账号）。</li>
+      </ul>
+      <div class="callout callout-xhs">
+        <strong>小红书 / 社区共识：</strong>可直接从使领馆清单链接进入 VIDEX，不必非走邮件专链；卡住可换浏览器或网络。
+        入境日可比 HA 开始日早约 <strong>1 周</strong>；保险起期 ≥ 拟入境日；费用写 CSC；Verpflichtungserklärung 选 <strong>nein</strong>。
+      </div>
+      <div class="callout callout-info">
+        下表绿色单元格 = <strong>建议直接照抄的填写值</strong>（对齐 [机构签字人] 签字 HA / 邀请信）。
+        护照请按<strong>现行新护照 [护照号]</strong>填写（2021 旧本 [旧护照号] 已作废，勿再用）。
+        父母信息已核对自国家签证表 <code>VIDEX-二维码-[中文姓名].pdf</code>（2021 年填写的长期表，非申根 <code>二维码表</code>）。
+      </div>
+    </section>
+
+    <section id="tab1">
+      <h2><span class="step-num">1</span>Angaben zur Person（申请人信息）</h2>
+      <p>对应官网第 1 个标签
+        <a href="https://videx.diplo.de/videx/visum-erfassung/de/videx-langfristiger-aufenthalt" target="_blank" rel="noopener">Angaben zur Person</a>：
+        <em>Personendaten</em> → <em>Eltern</em> → <em>Beruf</em>（顺序与页面一致）。
+      </p>
+
+      <h3>1.1 Personendaten（申请人本人）</h3>
+      <div class="callout callout-xhs">
+        <strong>小红书高赞共识</strong>（veve 等）：界面可切到 <strong>English</strong> 对照填写；
+        红字总原则——<strong>姓、名、出生地、生日、护照信息全部与护照一致</strong>。
+        出生地社区示例只写到<strong>省</strong>（如护照写 [出生省 大写，与护照一致] → 填 <code>[出生省 大写，与护照一致]</code>）。
+        日期格式 <strong>TT.MM.JJJJ</strong>（日.月.年）。姓名<strong>半角大写拉丁字母</strong>，与护照机读区一致。
+      </div>
+      <div class="callout callout-info">
+        字段名对照官网
+        <a href="https://videx.diplo.de/videx/visum-erfassung/de/videx-langfristiger-aufenthalt" target="_blank" rel="noopener">VIDEX · Langfristiger Aufenthalt</a>
+        → 标签 <em>Angaben zur Person</em> → <em>Personendaten des/der Antragstellenden</em>。
+      </div>
+      <table>
+        <tr><th>官网字段（德）</th><th>英界面常见译名</th><th>建议填写</th><th>说明</th></tr>
+        <tr>
+          <td>* Familienname</td>
+          <td>Family name</td>
+          <td class="fill">[SURNAME]</td>
+          <td>护照姓；大写</td>
+        </tr>
+        <tr>
+          <td>Geburtsname / frühere(r) Familienname(n)</td>
+          <td>Name at birth / former family name(s)</td>
+          <td class="fill">（空）</td>
+          <td>无曾用姓则留空；高赞模板亦空</td>
+        </tr>
+        <tr>
+          <td>* Vorname(n)</td>
+          <td>First name(s)</td>
+          <td class="fill">[GIVEN NAME]</td>
+          <td>护照名；大写；与护照一致</td>
+        </tr>
+        <tr>
+          <td>* Geburtsdatum (TT.MM.JJJJ)</td>
+          <td>Date of birth</td>
+          <td class="fill">[TT.MM.JJJJ 生日]</td>
+          <td>日.月.年；勿写成 1996-07-19</td>
+        </tr>
+        <tr>
+          <td>* Geburtsort</td>
+          <td>Place of birth</td>
+          <td class="fill">[出生省 大写，与护照一致]</td>
+          <td>与护照一致；社区按<strong>省</strong>填写</td>
+        </tr>
+        <tr>
+          <td>* Geburtsland</td>
+          <td>Country of birth</td>
+          <td class="fill">China</td>
+          <td>下拉选择</td>
+        </tr>
+        <tr>
+          <td>* Geschlecht</td>
+          <td>Sex</td>
+          <td class="fill">Männlich</td>
+          <td>选项：Männlich / Weiblich / Divers（英：Male / Female / …）</td>
+        </tr>
+        <tr>
+          <td>* Familienstand</td>
+          <td>Marital status</td>
+          <td class="fill">Ledig</td>
+          <td>未婚；英界面 Single。其他选项含 Verheiratet、Geschieden 等</td>
+        </tr>
+        <tr>
+          <td>* Derzeitige Staatsangehörigkeit</td>
+          <td>Current nationality</td>
+          <td class="fill">China</td>
+          <td>下拉</td>
+        </tr>
+        <tr>
+          <td>Frühere Staatsangehörigkeit</td>
+          <td>Former nationality</td>
+          <td class="fill">（空）</td>
+          <td>无前国籍则留空；勿填 ---</td>
+        </tr>
+        <tr>
+          <td>Haben Sie Kinder?</td>
+          <td>Do you have children?</td>
+          <td class="fill">不勾选 Ja</td>
+          <td>无子女不勾。官网提示：含已成年 / 不随行子女，有则须勾并另填</td>
+        </tr>
+      </table>
+      <div class="callout callout-ok">
+        已婚才需填配偶栏；你为 <strong>Ledig</strong>，配偶相关字段<strong>整段跳过 / 留空</strong>即可。
+      </div>
+
+      <h3>1.2 Eltern（父母 — 必填）</h3>
+      <div class="callout callout-ok">
+        官网区块名：<em>Eltern des/der Antragstellenden</em>。
+        个人信息来自 <code>VIDEX-二维码-[中文姓名].pdf</code>；
+        填法对齐小红书高赞模板：<strong>Geburtsort = 省</strong>、<strong>Wohnort = 市</strong>（大写拼音）。
+      </div>
+      <table>
+        <tr><th>官网字段</th><th>建议填写</th><th>说明</th></tr>
+        <tr><td>Familienname des Vaters</td><td class="fill">[SURNAME]</td><td>[父亲姓名]</td></tr>
+        <tr><td>Vorname(n) des Vaters</td><td class="fill">HANMING</td><td></td></tr>
+        <tr><td>Staatsangehörigkeit des Vaters</td><td class="fill">China</td><td>下拉</td></tr>
+        <tr><td>Geburtsdatum des Vaters</td><td class="fill">07.10.1970</td><td>TT.MM.JJJJ</td></tr>
+        <tr><td>Geburtsort des Vaters</td><td class="fill">[出生省 大写，与护照一致]</td><td>省（社区写法）</td></tr>
+        <tr><td>Wohnort des Vaters</td><td class="fill">[父母现居市 大写]</td><td>市（社区写法）</td></tr>
+        <tr><td>Familienname der Mutter</td><td class="fill">WU</td><td>吴红艳</td></tr>
+        <tr><td>Vorname(n) der Mutter</td><td class="fill">HONGYAN</td><td></td></tr>
+        <tr><td>Staatsangehörigkeit der Mutter</td><td class="fill">China</td><td>下拉</td></tr>
+        <tr><td>Geburtsdatum der Mutter</td><td class="fill">15.01.1970</td><td>TT.MM.JJJJ</td></tr>
+        <tr><td>Geburtsort der Mutter</td><td class="fill">[出生省 大写，与护照一致]</td><td>省</td></tr>
+        <tr><td>Wohnort der Mutter</td><td class="fill">[父母现居市 大写]</td><td>市</td></tr>
+      </table>
+
+      <h3>1.3 Beruf（职业）</h3>
+      <div class="callout callout-xhs">
+        <strong>小红书高赞共识</strong>（veve「超详细的德签研究人员Videx填写格式」等）：
+        CSC 博士联培在「Occupation learned / Erlernter Beruf」选
+        <strong>Student, trainee</strong>（德文界面：<strong>Student/in, Praktikant/-in</strong>），
+        旁注「学生，博士联培是这个」。
+        右侧「Further information」与「Current occupation (if different)」在模板中<strong>留空</strong>即可。
+        <strong>不要</strong>选 <code>Forscher/-in</code>（无德方劳动合同时易与材料口径冲突；签证类别仍是 §18d 研究人员，职业栏填学生身份）。
+      </div>
+      <table>
+        <tr><th>字段（德 / 英）</th><th>建议填写</th><th>说明</th></tr>
+        <tr>
+          <td>* Erlernter Beruf<br><span style="color:var(--muted)">Occupation learned</span></td>
+          <td class="fill">Student/in, Praktikant/-in<br><span style="color:var(--muted)">（英：Student, trainee）</span></td>
+          <td>下拉固定选项；博士联培 / 无德方工作合同选此项</td>
+        </tr>
+        <tr>
+          <td>ggf. weitere Angaben<br><span style="color:var(--muted)">Further information</span></td>
+          <td class="fill">（空）</td>
+          <td>高赞模板留空；非必填。若想写专业可填 German Studies / Linguistics，非必须</td>
+        </tr>
+        <tr>
+          <td>Derzeitige berufliche Tätigkeit (sofern abweichend)<br><span style="color:var(--muted)">Current occupation (if different)</span></td>
+          <td class="fill">（空）</td>
+          <td>与所学职业相同则不填；高赞模板整栏留空</td>
+        </tr>
+        <tr>
+          <td>ggf. weitere Angaben（现职业旁）</td>
+          <td class="fill">（空）</td>
+          <td>同上</td>
+        </tr>
+      </table>
+      <div class="callout callout-info">
+        <strong>易混点：</strong>VIDEX 的 Beruf 是「当前身份」下拉，不是把签证目的写成 Forscher。
+        研究目的写在 <strong>Reisedaten / Zweck</strong> 与 HA、邀请信里；接待人写在 <strong>Referenz</strong>（[机构签字人] / [研究所简称]）。
+        下拉里虽有 <code>Forscher/-in</code>，社区对 CSC 联培一致建议用 Student。
+      </div>
+      <div class="callout callout-warn">
+        流程指南旧表述「Erlernter Beruf = GERMAN STUDIES」不适用：官网该项为<strong>职业类别下拉</strong>，不能自填专业名当职业。
+      </div>
+    </section>
+
+    <section id="tab2">
+      <h2><span class="step-num">2</span>Kontaktdaten（联系方式）</h2>
+      <p>官网标签 <em>Kontaktdaten</em>。填<strong>当前中国常住地址</strong>（[在读高校]仙林），勿用 2021 武汉地址。</p>
+      <div class="callout callout-xhs">
+        小红书高赞模板：街道写路名拼音大写、门牌号分开填；
+        <strong>Sonstige Adressangaben 可留空</strong>（宿舍楼详情非必须）；
+        「是否居住在国籍以外国家」<strong>不勾选</strong>。
+        电话填本人手机；格式易触发<strong>红色感叹号</strong>——号码<strong>不能以 <code>+</code> 开头</strong>，推荐
+        <code>0086[你的手机号]</code>（无空格）。
+      </div>
+      <table>
+        <tr><th>官网字段</th><th>英界面</th><th>建议填写</th><th>说明</th></tr>
+        <tr><td>* Straße</td><td>Street</td><td class="fill">[路名拼音 大写]</td><td>路名；大写拼音</td></tr>
+        <tr><td>* Hausnummer</td><td>House number</td><td class="fill">163</td><td>门牌号</td></tr>
+        <tr><td>Sonstige Adressangaben</td><td>Other address information</td><td class="fill">（空）</td><td>高赞模板留空；需要时可补宿舍楼</td></tr>
+        <tr><td>* Postleitzahl</td><td>Postal code</td><td class="fill">[邮编]</td><td></td></tr>
+        <tr><td>* Ort</td><td>Town/city</td><td class="fill">[中国城市 大写]</td><td>市；大写</td></tr>
+        <tr><td>* Land</td><td>Country</td><td class="fill">China</td><td>下拉</td></tr>
+        <tr><td>* Telefon-/Mobilfunknummer</td><td>Telephone/mobile</td><td class="fill">0086[你的手机号]</td><td>无空格；红框感叹号多半是格式问题，见下行</td></tr>
+        <tr><td>* E-Mail</td><td>Email</td><td class="fill">[your.name]@university.edu.cn</td><td>填小写即可；VIDEX 常自动变成 <code>[YOUR.NAME]@UNIVERSITY.EDU.CN</code>，属系统行为，收信不受影响</td></tr>
+        <tr>
+          <td>Haben Sie Ihren Wohnsitz in einem anderen Staat…?</td>
+          <td>Residence outside nationality country?</td>
+          <td class="fill">不勾选 Ja</td>
+          <td>人在中国、中国籍 → 不勾</td>
+        </tr>
+      </table>
+      <div class="callout callout-warn">
+        <strong>电话红框 / 感叹号（官网 maskRegex）：</strong>首位须为数字/字母，<strong>不能以 <code>+</code> 开头</strong>；中间不要空格/横杠。
+        本人手机用 <code>0086[你的手机号]</code>（与 2021 表一致）。勿写 <code>+86 158…</code>。
+      </div>
+      <div class="callout callout-info">
+        可选补充（非必须）：<code>[宿舍/楼号等补充地址，可选]</code> 写入 Sonstige Adressangaben。
+        2021 旧址仅存档，勿作本次现住址。
+      </div>
+    </section>
+
+    <section id="tab3">
+      <h2><span class="step-num">3</span>Ausweispapiere（证件）</h2>
+      <p>官网标签 <em>Ausweispapiere</em>。填法对齐小红书高赞 veve「证件信息」标注；数值来自桌面 <code>你的护照扫描件</code>。</p>
+
+      <div class="callout callout-xhs">
+        <strong>小红书高赞标注对照：</strong>
+        护照类型 · 护照号<strong>别填错</strong> · 签发日期 · 有效期至 · 签发国家 · 签发机关 ·（英界面可能有）签发省份。
+        日期一律 <strong>日.月.年</strong>；类型选 <strong>Ordinary passport</strong>（德：Reisepass）。
+      </div>
+
+      <table>
+        <tr><th>高赞旁注</th><th>官网字段（德）</th><th>英界面</th><th>照护照填写</th></tr>
+        <tr>
+          <td>护照类型</td>
+          <td>* Art des Reisedokuments</td>
+          <td>Type of travel document</td>
+          <td class="fill">Reisepass<br><span style="color:var(--muted)">英选 Ordinary passport</span></td>
+        </tr>
+        <tr>
+          <td>护照号 别填错</td>
+          <td>* Nummer des Reisedokuments</td>
+          <td>Travel document number</td>
+          <td class="fill">[护照号]</td>
+        </tr>
+        <tr>
+          <td>签发日期</td>
+          <td>* Ausstellungsdatum (TT.MM.JJJJ)</td>
+          <td>Date of issue</td>
+          <td class="fill">12.06.2026</td>
+        </tr>
+        <tr>
+          <td>有效期至</td>
+          <td>* Gültig bis (TT.MM.JJJJ)</td>
+          <td>Valid until</td>
+          <td class="fill">11.06.2036</td>
+        </tr>
+        <tr>
+          <td>签发国家</td>
+          <td>* Ausstellender Staat</td>
+          <td>Issuing state</td>
+          <td class="fill">China</td>
+        </tr>
+        <tr>
+          <td>签发机关</td>
+          <td>Ausgestellt von</td>
+          <td>Issued by</td>
+          <td class="fill">NATIONAL IMMIGRATION ADMINISTRATION, PRC, [省份 大写]</td>
+        </tr>
+        <tr>
+          <td>签发省份</td>
+          <td>（德文界面通常<strong>无此栏</strong>）</td>
+          <td>Issued in（若出现）</td>
+          <td class="fill">[省份 大写]（有单独栏才填；已写入上一行则此处可空或仍写 [省份 大写]）</td>
+        </tr>
+      </table>
+
+      <div class="callout callout-info">
+        <strong>[省份 大写] 要不要写？</strong>
+        高赞模板在有 <em>Issued in</em> 时把省份单独写在「签发省份」。
+        你德文界面<strong>没有</strong>该栏 → 把江苏并进「签发机关」即可，写成
+        <code>NATIONAL IMMIGRATION ADMINISTRATION, PRC, [省份 大写]</code>
+        （与旧表把 [出生省 大写，与护照一致] 写在机关后的习惯一致）。只写机关、不加省份一般也能过，加了更完整。
+      </div>
+      <div class="callout callout-ok">
+        护照页：GONG / YI · [DD MON YYYY] · [出生省 大写，与护照一致] · Authority = National Immigration Administration, PRC ·
+        Place of issue = 江苏 / [省份 大写]。勿用旧本 <code>[旧护照号]</code>。
+      </div>
+    </section>
+
+    <section id="tab4">
+      <h2><span class="step-num">4</span>Reisedaten（旅行 / 停留）</h2>
+      <p>官网标签 <em>Reisedaten</em>。此页与 HA、邀请信、保险日期对齐最关键。</p>
+
+      <div class="callout callout-xhs">
+        <strong>小红书高赞（veve 研究人员 Videx 模板 + 作者回复）：</strong>
+        博士联培 Zweck 选 <strong>Study / Studium</strong>。
+        <strong>Ggf. beabsichtigte Erwerbstätigkeit 留空</strong>。
+        停留时长见下节「Beabsichtigte Dauer」——作者确认 12 个月联培勾选「不超过 12 个月」。
+        保险起期 ≥ 拟入境日。
+      </div>
+
+      <h3>4.1 目的</h3>
+      <table>
+        <tr><th>官网字段</th><th>建议填写</th><th>说明</th></tr>
+        <tr>
+          <td>* Zweck des Aufenthalts…</td>
+          <td class="fill">Studium（英：Study）</td>
+          <td>
+            高赞联培写法。备选 Sonstiges + §18d。
+            VFS 预约仍选<strong>研究人员</strong>。
+          </td>
+        </tr>
+        <tr>
+          <td>Sonstiges 说明（仅当选 Sonstiges）</td>
+          <td class="fill">Forschungsaufenthalt als Joint PhD Student (CSC) gemaess § 18d AufenthG; [德国接收大学] Muenchen</td>
+          <td>选 Studium 时通常不必填</td>
+        </tr>
+        <tr>
+          <td>Ggf. beabsichtigte Erwerbstätigkeit</td>
+          <td class="fill">（空 — 不填）</td>
+          <td>高赞模板留空；CSC 无德方劳动合同</td>
+        </tr>
+      </table>
+
+      <h3>4.2 Beabsichtigte Dauer des Aufenthaltes（拟停留时长）</h3>
+      <div class="callout callout-xhs">
+        <strong>小红书核实（veve 图注 + 评论区）：</strong>
+        <ul style="margin:0.4rem 0 0; padding-left:1.2rem;">
+          <li><strong>Von</strong> = 拟入境日；<strong>Bis</strong> = 拟出境日（日.月.年）。</li>
+          <li>满<strong>一年</strong>时：结束日宜写在「起日周年的前一天」
+            （红字例：10.12.2024–<strong>09.12.2025</strong>），避免起止同日被算成多一天。
+            你的 HA <code>01.10.2026–30.09.2027</code> 已符合此逻辑。</li>
+          <li>作者回复：停留写 9.1–翌年 8.30「可以」；12 个月联培问是否勾选不超过 12 个月 → 作者答「<strong>不超过</strong>」（勾选 ja）。</li>
+          <li>评论共识：12 个月按「少一天」区间勾选不足/不超过 12 个月（例 01.09–翌年 08.31）。</li>
+          <li>社区另常见：入境可比邀请函/HA 开始日早约 <strong>1 周</strong>（保险对齐入境日）。</li>
+        </ul>
+      </div>
+      <table>
+        <tr><th>官网字段</th><th>建议填写</th><th>说明</th></tr>
+        <tr>
+          <td>* Von (TT.MM.JJJJ)<br>拟入境</td>
+          <td class="fill">25.09.2026</td>
+          <td>与保险起期同一天。比 HA 开始日（01.10.2026）早约 1 周。</td>
+        </tr>
+        <tr>
+          <td>* Bis<br>拟出境</td>
+          <td class="fill">24.09.2027</td>
+          <td>起日周年的前一天（25.09→24.09），正好 ≤12 个月；勿写 30.09.2027（会超一年却勾「不超过」）。</td>
+        </tr>
+        <tr>
+          <td>不超过 12 个月勾选</td>
+          <td class="fill">勾选 ja</td>
+          <td>与上列日期配套；已按定稿 PDF 核对</td>
+        </tr>
+      </table>
+      <div class="callout callout-ok">
+        <strong>已定（定稿 PDF 2026.7.27）：</strong>
+        Von <code>25.09.2026</code> · Bis <code>24.09.2027</code> · 勾选 ja · 保险起期仍 <code>25.09.2026</code>。
+        比 HA 开始日（01.10.2026）早约 1 周；结束日比 HA（30.09.2027）略早几天，以保证「不超过 12 个月」与日期一致。
+        HA / 邀请信日期不必改。
+      </div>
+    </section>
+
+    <section id="tab5">
+      <h2><span class="step-num">5</span>Referenz（德国接待方 / 邀请方）</h2>
+      <p>官网标签 <em>Referenz</em> = 小红书图注「邀请方信息」。必须与 <strong>[机构签字人]签字的 HA / 邀请信</strong>一致。</p>
+      <div class="callout callout-xhs">
+        <strong>小红书核实（veve《超详细的德签研究人员Videx填写格式》Reference 页，533 赞）：</strong>
+        <ul style="margin:0.4rem 0 0; padding-left:1.2rem;">
+          <li>类型选 <strong>Educational establishment/company/organisation</strong>
+            （德：Bildungseinrichtung/Firma/Organisation）——图注「邀请方类型」。</li>
+          <li>名称 = 德方大学/机构全称（例图写 TUM）。<strong>勿用逗号、括号</strong>（VIDEX 只允许拉丁字母及 <code>ÄÖÜß'/- +.</code> 与空格；红框感叹号多为非法字符）。</li>
+          <li>外方联系人填<strong>姓 + 名</strong>（图注「外方联系人姓/名」）= HA/邀请信签字人，不是退休顾问。</li>
+          <li>街道 / 门牌 / 邮编 / 市 / 国家 / 电话 = 图注必填项；地址电话抄自 HA/邀请信。</li>
+          <li>作者总原则：<strong>不加星号的可以不写</strong> → Register（登记册名称/地点/编号）、联系人出生日期等通常<strong>留空</strong>。</li>
+          <li>社区同口径（TK 等）：留学/研究选 Bildungseinrichtung；联络人 = 邀请函上的教授或人事。</li>
+        </ul>
+      </div>
+
+      <h3>5.1 机构</h3>
+      <table>
+        <tr><th>字段</th><th>建议填写</th><th>说明（XHS）</th></tr>
+        <tr><td>* Art der Referenz</td><td class="fill">Bildungseinrichtung/Firma/Organisation</td><td>邀请方类型；高校/研究所选此项</td></tr>
+        <tr><td>* Name der Bildungseinrichtung…</td><td class="fill">LUDWIG-MAXIMILIANS-UNIVERSITAET MUENCHEN [研究所简称]</td><td>已定短版（无逗号/括号）；研究所全称见 HA</td></tr>
+        <tr><td>（名称备选·更长）</td><td class="fill">LUDWIG-MAXIMILIANS-UNIVERSITAET MUENCHEN INSTITUT FUER ALLGEMEINE UND TYPOLOGISCHE SPRACHWISSENSCHAFT [研究所简称]</td><td>仅当短版不够用时；仍勿用 <code>,</code> <code>()</code></td></tr>
+        <tr><td>* Sitz der Organisation, Ort</td><td class="fill">MUENCHEN</td><td>市</td></tr>
+        <tr><td>* Sitz der Organisation, Land</td><td class="fill">Deutschland</td><td>国家</td></tr>
+        <tr><td>Aufgabenstellung / Wirkungsbereich</td><td class="fill">Bildung（有下拉则选；无星号可空）</td><td>veve 未强调必填；选教育即可</td></tr>
+        <tr><td>Register 名称 / 地点 / 编号</td><td class="fill">（空）</td><td>无星号 → 留空；高校不知登记号</td></tr>
+      </table>
+
+      <h3>5.2 Ansprechperson（联系人 = [外导姓名]）</h3>
+      <table>
+        <tr><th>字段</th><th>建议填写</th><th>说明（XHS）</th></tr>
+        <tr><td>* Familienname</td><td class="fill">[外导姓 大写]</td><td>外方联系人姓</td></tr>
+        <tr><td>* Vorname(n)</td><td class="fill">[外导名 大写]</td><td>外方联系人名（勿加 Prof./Dr.）</td></tr>
+        <tr><td>Geschlecht</td><td class="fill">Weiblich（若标 *；否则可空）</td><td>veve 图未红标；有星号再填</td></tr>
+        <tr><td>Geburtsdatum</td><td class="fill">（空）</td><td>不知 → 留空</td></tr>
+        <tr><td>Staatsangehörigkeit</td><td class="fill">（空；若必填再写 Deutschland）</td><td>通常可空</td></tr>
+        <tr><td>* Straße</td><td class="fill">SCHELLINGSTRASSE</td><td>街道（HA：Schellingstraße 33）</td></tr>
+        <tr><td>* Hausnummer</td><td class="fill">33</td><td>门牌号</td></tr>
+        <tr><td>补充地址</td><td class="fill">Rueckgebaeude（可选）</td><td>HA 有 Rückgebäude 可写；无星号可空</td></tr>
+        <tr><td>* Postleitzahl</td><td class="fill">[德方邮编]</td><td>邮编</td></tr>
+        <tr><td>* Ort</td><td class="fill">MUENCHEN</td><td>市</td></tr>
+        <tr><td>* Land</td><td class="fill">Deutschland</td><td>国家</td></tr>
+        <tr><td>* Telefon</td><td class="fill">0049[机构电话]</td><td>首位不能是 +；用 00+国家码。HA：+49 (0) 89 2180-2486</td></tr>
+        <tr><td>E-Mail</td><td class="fill">[supervisor]@uni-example.de</td><td>导师邮箱；有 * 必填，无 * 也建议填</td></tr>
+      </table>
+      <div class="callout callout-ok">
+        <strong>本案照抄：</strong>类型 = 教育机构 · 名称见上表（无逗号无括号）· 联系人 = [外导姓 大写] / [外导名 大写] ·
+        地址 = [研究所街道门牌], [德方邮编] München · 电话/邮箱同上。
+      </div>
+      <div class="callout callout-warn">
+        <strong>名称红框 / 感叹号：</strong>官方允许字符仅拉丁字母及 <code>Ä Ö Ü ß ' / - + .</code> 与空格。
+        <code>,</code> 与 <code>()</code> 会报错。删掉逗号和括号即可；仍报错再改用短版 <code>… MUENCHEN [研究所简称]</code>。
+      </div>
+      <div class="callout callout-warn">
+        <strong>电话红框 / 感叹号（已核对官网 maskRegex）：</strong>
+        号码<strong>不能以 <code>+</code> 开头</strong>（正则要求首位为字母或数字）。
+        正确写法：<code>0049[机构电话]</code>（00 + 49 + 89 + 21802486）。
+        备选：<code>08921802486</code>。不要写 <code>+49…</code>。
+      </div>
+      <div class="callout callout-warn">
+        不要把接待人写成 PD Dr. [学术顾问]（已退休）。正式机构对接与签字人均为 <strong>[机构签字人]</strong>。
+      </div>
+    </section>
+
+    <section id="tab6">
+      <h2><span class="step-num">6</span>Lebensunterhalt und Aufenthaltsdetails（生活费用与停留细节）</h2>
+      <p>官网标签 <em>Lebensunterhalt</em> / Means of support。对照小红书 veve 高赞模板（该页图注）填写。</p>
+
+      <h3>6.1 生活费用</h3>
+      <div class="callout callout-xhs">
+        <strong>veve 图注：</strong>生活费来源 CSC 写
+        <code>SUPPORT BY CHINA SCHOLARSHIP COUNCIL</code>
+        （「也可写父母自担或 xx 大学工资」）；
+        Verpflichtungserklärung：<strong>正常 CSC 一般是 No</strong>。
+        官网该自由文本框 <strong>最长 50 字符</strong>，上面这句正好可用，勿再塞长补充。
+      </div>
+      <table>
+        <tr><th>字段</th><th>建议填写</th></tr>
+        <tr>
+          <td>Aus welchen Mitteln wird der Lebensunterhalt… bestritten?</td>
+          <td class="fill">SUPPORT BY CHINA SCHOLARSHIP COUNCIL</td>
+        </tr>
+        <tr>
+          <td>Gibt es eine förmliche Verpflichtungserklärung?</td>
+          <td class="fill">nein</td>
+        </tr>
+      </table>
+      <div class="callout callout-info">
+        官网选项为：nein · ja, von der Referenz · ja, durch abweichende(n) Verpflichtungsgebende(n)。
+        CSC → 选 <strong>nein</strong>（不要选「由邀请方」）。
+      </div>
+
+      <h3>6.2 在德住址 / 住宿 / 保险</h3>
+      <div class="callout callout-xhs">
+        <strong>veve 图注：</strong>
+        街道/门牌 <strong>可以空着</strong>；
+        邮编 + 城市（例图红框，常必填）→ 填慕尼黑；
+        住宿方式 <strong>可以空着</strong>；
+        保留德国以外永久居住地 → <strong>Yes</strong>，填老家/父母住址或国内城市（例图 <code>[中国城市 大写], [省份 大写], CHINA</code>；作者评论也有人写家）；
+        家人陪伴 → <strong>No</strong>；保险 → <strong>Yes</strong>。
+      </div>
+      <table>
+        <tr><th>字段</th><th>建议填写</th></tr>
+        <tr><td>Straße / Hausnummer（falls bekannt）</td><td class="fill">（空）</td></tr>
+        <tr><td>* Postleitzahl / Ort</td><td class="fill">[德方邮编] / MUENCHEN</td></tr>
+        <tr><td>Wie werden Sie untergebracht sein?</td><td class="fill">（空）</td></tr>
+        <tr><td>Wird ständiger Wohnort außerhalb… beibehalten?</td><td class="fill">ja / Yes</td></tr>
+        <tr><td>Falls ja, wo?</td><td class="fill">[中国城市 大写], [省份 大写], CHINA</td></tr>
+        <tr><td>Sollen Familienangehörige mit einreisen?</td><td class="fill">nein / No</td></tr>
+        <tr><td>Haben Sie eine Krankenversicherung…?</td><td class="fill">ja / Yes（起期 25.09.2026，与拟入境一致）</td></tr>
+      </table>
+
+      <h3>6.3 旅行费用承担</h3>
+      <div class="callout callout-warn">
+        <strong>长期居留表没有这一栏。</strong>
+        「旅行费用由谁承担 / Reisekostenübernahme」（本人/第三方、现金、旅行支票等）主要出现在<strong>短期申根 VIDEX</strong>。
+        你填的 <em>Langfristiger Aufenthalt</em> 的 Lebensunterhalt 页不含此项——<strong>跳过即可</strong>，不必找、也不必补填。
+        旅费/国际旅费由 CSC 资助证明另行体现。
+      </div>
+
+      <h3>6.4 既往德国停留</h3>
+      <div class="callout callout-info">
+        日期出自你 2021 年国家签证表 <code>VIDEX-二维码表-[中文姓名].pdf</code>：
+        「以前是否去过德国」勾 Yes，写明 <code>22.09.2018 – 28.03.2019 MÜNCHEN</code>。
+        若护照戳日期不同，以真实出入境为准修改。
+      </div>
+      <table>
+        <tr><th>字段</th><th>建议</th></tr>
+        <tr>
+          <td>Haben Sie sich bereits früher… aufgehalten?</td>
+          <td class="fill">ja</td>
+        </tr>
+        <tr>
+          <td>Zeiten und Aufenthaltsorte</td>
+          <td class="fill">22.09.2018 – 28.03.2019 MUENCHEN</td>
+        </tr>
+        <tr>
+          <td>补充说明（若有文本框）</td>
+          <td class="fill">Master studies at [德国接收大学] Muenchen WS 2018/19</td>
+        </tr>
+      </table>
+
+      <h3>6.5 Erklärung（声明）</h3>
+      <div class="callout callout-xhs">
+        veve 末页三项：犯罪记录 / 驱逐拒签 / 所列疾病 → 均选 <strong>No / nein</strong>。
+        填完后：① 先 <strong>Speichern / Save</strong>（存 JSON 便于改）② 再 <strong>Continue</strong> 出 PDF。
+      </div>
+      <table>
+        <tr><th>问题</th><th>建议</th></tr>
+        <tr><td>Sind Sie vorbestraft?</td><td class="fill">nein / No</td></tr>
+        <tr><td>Ausweisung / Abschiebung / Ablehnung…?</td><td class="fill">nein / No</td></tr>
+        <tr><td>Leiden Sie an einer der folgenden Krankheiten…?</td><td class="fill">nein / No</td></tr>
+      </table>
+    </section>
+
+    <section id="print">
+      <h2><span class="step-num">7</span>保存、打印与签名</h2>
+      <div class="callout callout-ok">
+        <strong>改天还能打开：</strong>VIDEX <strong>没有云账号</strong>。今天务必点 <strong>Speichern / Save</strong>，
+        把下载的文件（多为 JSON）存到材料夹。明天打开同一长期表链接 →
+        <strong>Daten importieren / Import data</strong> → 选该文件即可恢复。
+        只关网页不 Speichern = 记录丢失。
+      </div>
+      <div class="callout callout-xhs">
+        高赞流程：先 <strong>Speichern</strong>（存草稿）→ 再 <strong>Weiter / Continue</strong> 出 PDF。
+      </div>
+      <ol>
+        <li>点击 <strong>Speichern</strong>，把下载文件挪到固定文件夹并备份。</li>
+        <li>确认无误后再 <strong>Weiter</strong>，下载 PDF（申请表全文 + 条形码页）。</li>
+        <li><strong>A4 激光打印</strong>全部页面 + 条形码页；勿折叠二维码。</li>
+        <li>通常还有 <strong>§ 54 Abs. 2 Nr. 8</strong> 告知书 — 一并打印。</li>
+        <li>申请表 + 告知书均需<strong>亲笔签名</strong>（中文签名，与护照一致）。</li>
+        <li>第一页按规定粘贴/携带生物识别照片（35×45 mm）。</li>
+      </ol>
+      <div class="callout callout-info">
+        PDF 不能当可编辑草稿再导入；要改内容请改 JSON 后重新导入，或递签现场扫条形码改（改完须重打重签）。
+        VIDEX 与 VFS 预约是两条线：可先预约，递签日前提交打印签字件即可。
+      </div>
+    </section>
+
+    <section id="align">
+      <h2><span class="step-num">8</span>与 HA / 邀请信 / 小红书对齐清单</h2>
+      <ul class="checklist">
+        <li>Beruf：Student/in, Praktikant/-in；补充栏留空；不选 Forscher</li>
+        <li>父母：出生地省 [出生省 大写，与护照一致]、现居市 [父母现居市 大写]</li>
+        <li>联系地址：[在读高校]仙林；Sonstige Adressangaben 可空</li>
+        <li>护照：类型 Reisepass · <strong>[护照号]</strong> · 12.06.2026–11.06.2036 · China · Ausgestellt von: NATIONAL IMMIGRATION ADMINISTRATION, PRC, [省份 大写]</li>
+        <li>Zweck：高赞联培选 <strong>Studium / Study</strong>（备选 Sonstiges + §18d）</li>
+        <li>停留时长（已定）：<strong>25.09.2026–24.09.2027</strong> + 勾选 ≤12 个月；保险起期仍 25.09.2026（可盖过 VIDEX 结束日）</li>
+        <li>Ggf. beabsichtigte Erwerbstätigkeit：<strong>留空</strong></li>
+        <li>Referenz：类型 Bildungseinrichtung…；名称 <strong>LUDWIG-MAXIMILIANS-UNIVERSITAET MUENCHEN [研究所简称]</strong>；联系人 [外导姓 大写]/[外导名 大写]；[研究所街道 大写], [德方邮编]；电话 <strong>0049[机构电话]</strong>；邮箱 [supervisor]@uni-example.de；Register 空；非 [学术顾问]</li>
+        <li>生活费：SUPPORT BY CHINA SCHOLARSHIP COUNCIL；Verpflichtungserklärung = <strong>nein</strong>（长期表无「旅费承担」栏）</li>
+        <li>在德街道可空；MUENCHEN + 邮编 [德方邮编]；保留中国常住 [中国城市 大写], [省份 大写], CHINA；住宿可空</li>
+        <li>保险 Yes；起期 <strong>25.09.2026</strong> = VIDEX 拟入境日</li>
+        <li>既往停留：ja · <strong>22.09.2018 – 28.03.2019 MUENCHEN</strong>（出自 2021 国家签证表；可按护照戳改）</li>
+        <li>声明三项：nein；先 <strong>Speichern</strong> 存 JSON → 再 Weiter 下 PDF；打印签字装入 <code>01_签证申请表_VIDEX</code></li>
+      </ul>
+      <p style="margin-top:1rem;">
+        相关本地文件：
+        <a href="./CSC德国联培博士递签流程指南.html">CSC 递签流程指南</a> ·
+        <a href="./ha-fill-guide.html">HA 填写指南</a>
+      </p>
+      <p>
+        外部参考：
+        <a href="https://videx.diplo.de/videx/visum-erfassung/de/videx-langfristiger-aufenthalt" target="_blank" rel="noopener">VIDEX 官网</a> ·
+        <a href="https://www.51deguo.com/thread-6228-1-1.html" target="_blank" rel="noopener">51deguo VIDEX 教程</a>
+      </p>
+    </section>
+
+    <footer>
+      最终核对 2026-07-22：对齐定稿 PDF <code>你的 VIDEX 打印件</code> + 官网 + veve + [机构签字人] HA/邀请信。<br>
+      已定关键值 — VIDEX 停留 <code>25.09.2026–24.09.2027</code>（≤12 个月 ja）· 保险起期 <code>25.09.2026</code> · 机构短名 <code>… MUENCHEN [研究所简称]</code> · 德方电话 <code>0049[机构电话]</code> · 本人电话 <code>0086[你的手机号]</code> · 护照 <code>[护照号]</code>。<br>
+      父母与既往停留核自 2021 国家签证表；长期表无「旅费承担」栏。
+    </footer>
+  </div>
+</body>
+</html>
