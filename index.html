@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CSC德国联培博士 · 上海VFS研究人员签证（§18d）递签攻略公开版：文件夹模板、排袋规则、现场流程。已隐去个人信息。" />
+  <title>CSC 德国联培 · 上海研究人员签证递签攻略（公开版）</title>
+  <style>
+    :root {
+      --bg: #f0f3f7;
+      --card: #fff;
+      --text: #1c2430;
+      --muted: #5a6573;
+      --line: #d8e0ea;
+      --blue: #1a4f7a;
+      --blue-soft: #e7f0f7;
+      --green: #146c43;
+      --green-soft: #e8f6ef;
+      --amber: #9a6700;
+      --amber-soft: #fff8e8;
+      --red: #b42318;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse 80% 50% at 10% -10%, #d6e6f4 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 100% 0%, #e8eef5 0%, transparent 45%),
+        var(--bg);
+      line-height: 1.7;
+      padding: 1.5rem 1rem 3.5rem;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; }
+    header {
+      background: linear-gradient(145deg, #163a5c 0%, #1a4f7a 55%, #2a6a94 100%);
+      color: #fff;
+      border-radius: 14px;
+      padding: 1.8rem 1.7rem 1.5rem;
+      margin-bottom: 1.1rem;
+      box-shadow: 0 10px 28px rgba(22, 58, 92, 0.22);
+    }
+    header .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      background: rgba(255,255,255,0.16);
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      margin-bottom: 0.7rem;
+    }
+    header h1 {
+      margin: 0 0 0.45rem;
+      font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    header p { margin: 0; opacity: 0.92; font-size: 0.95rem; }
+    .meta {
+      margin-top: 0.9rem;
+      font-size: 0.82rem;
+      opacity: 0.82;
+    }
+    .banner {
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    .banner-warn {
+      background: var(--amber-soft);
+      border: 1px solid #f0d58a;
+      color: #6b4a00;
+    }
+    .banner-ok {
+      background: var(--green-soft);
+      border: 1px solid #b7e0c8;
+      color: #0f5132;
+    }
+    nav.toc {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+    }
+    nav.toc h2 { margin: 0 0 0.5rem; font-size: 0.95rem; color: var(--blue); }
+    nav.toc ol { margin: 0; padding-left: 1.2rem; font-size: 0.9rem; }
+    nav.toc a { color: var(--blue); text-decoration: none; }
+    nav.toc a:hover { text-decoration: underline; }
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.25rem 1.35rem;
+      margin-bottom: 0.95rem;
+    }
+    section h2 {
+      margin: 0 0 0.85rem;
+      font-size: 1.12rem;
+      color: var(--blue);
+      padding-bottom: 0.45rem;
+      border-bottom: 2px solid var(--blue-soft);
+    }
+    h3 { margin: 1rem 0 0.45rem; font-size: 0.98rem; }
+    p, li { font-size: 0.94rem; }
+    ul, ol { padding-left: 1.25rem; }
+    li { margin-bottom: 0.3rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 0.6rem 0;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 0.5rem 0.65rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: var(--blue-soft); color: var(--blue); }
+    tr:nth-child(even) td { background: #fafbfd; }
+    code, .mono {
+      font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+      font-size: 0.84em;
+      background: #eef2f7;
+      padding: 0.08rem 0.35rem;
+      border-radius: 4px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.12rem 0.4rem;
+      border-radius: 4px;
+      margin-right: 0.25rem;
+      vertical-align: middle;
+    }
+    .tag-must { background: #ffe8e8; color: #a32020; }
+    .tag-opt { background: #eef2f7; color: #4a5565; }
+    .tag-tip { background: var(--blue-soft); color: var(--blue); }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.45rem;
+      margin: 0.8rem 0;
+    }
+    .flow div {
+      background: var(--blue-soft);
+      border-radius: 8px;
+      padding: 0.65rem 0.5rem;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 650;
+      color: var(--blue);
+    }
+    .callout {
+      border-radius: 8px;
+      padding: 0.75rem 0.95rem;
+      margin: 0.75rem 0;
+      font-size: 0.9rem;
+    }
+    .c-info { background: var(--blue-soft); border-left: 4px solid var(--blue); }
+    .c-warn { background: var(--amber-soft); border-left: 4px solid var(--amber); }
+    .c-ok { background: var(--green-soft); border-left: 4px solid var(--green); }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    a { color: #1d5bbf; }
+    @media print {
+      body { background: #fff; padding: 0; }
+      header { box-shadow: none; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">公开分享 · 已隐去个人信息</div>
+      <h1>CSC 德国联培博士<br>上海研究人员签证递签攻略</h1>
+      <p>国家签证（D 类）· 《居留法》§18d 研究人员 · 上海 VFS（久事商务大厦）</p>
+      <div class="meta">整理：2026-07 · 实操领区：上海 · 类型：CSC 联培 / 海外访学（非全奖读博）</div>
+    </header>
+
+    <div class="banner banner-warn">
+      <strong>声明：</strong>本页为个人经验整理，不能替代德国驻华使领馆 / VFS 官方要求。政策与清单可能更新，递签前请再核对官网。文中已去掉姓名、护照号、具体导师与学校细节等可识别信息。
+    </div>
+    <div class="banner banner-ok">
+      <strong>怎么用：</strong>可直接保存本 HTML 发给朋友，或上传到 GitHub Pages / 网盘分享链接。复制下方「文件夹结构」即可在自己电脑建同款材料夹。
+    </div>
+
+    <nav class="toc">
+      <h2>目录</h2>
+      <ol>
+        <li><a href="#who">适用谁</a></li>
+        <li><a href="#flow">推荐时间线</a></li>
+        <li><a href="#folders">材料文件夹模板（可复制）</a></li>
+        <li><a href="#bags">两个档案袋 · 原件与复印件</a></li>
+        <li><a href="#day">上海 VFS 当天流程</a></li>
+        <li><a href="#fee">费用参考</a></li>
+        <li><a href="#vfs-list">现场收据清单大致会勾什么</a></li>
+        <li><a href="#tips">避坑与勿交</a></li>
+        <li><a href="#links">官方与社区链接</a></li>
+      </ol>
+    </nav>
+
+    <section id="who">
+      <h2>一、适用谁</h2>
+      <ul>
+        <li>CSC <strong>联培 / 访学</strong>（有奖学金资助证明，通常无德方工作合同）</li>
+        <li>签证类别选 VFS 上的 <strong>长期签证 → 研究人员 / 博士生</strong>（不是短期申根，也不是普通留学 Studium）</li>
+        <li>常住地在上海领区（沪苏浙皖）→ 上海 VFS</li>
+        <li>联培一般<strong>不必走 APS</strong>（以使馆 FAQ 现行表述为准）</li>
+      </ul>
+    </section>
+
+    <section id="flow">
+      <h2>二、推荐时间线</h2>
+      <div class="flow">
+        <div>① VFS 先占号</div>
+        <div>② 德方材料齐</div>
+        <div>③ 填 VIDEX</div>
+        <div>④ 保险/打印</div>
+        <div>⑤ 现场递签</div>
+        <div>⑥ 等签</div>
+      </div>
+      <p>预约<strong>不必</strong>先填完 VIDEX；但递签当天<strong>必须</strong>带上 VIDEX 打印件。号源紧时建议先约日期，再倒推准备材料。</p>
+    </section>
+
+    <section id="folders">
+      <h2>三、材料文件夹模板（可复制）</h2>
+      <p>按使馆研究人员清单 + 上海实务经验，建议建如下文件夹（透明袋也可贴同样标签）：</p>
+      <table>
+        <tr><th>#</th><th>文件夹名</th><th>放什么</th></tr>
+        <tr><td>00</td><td><code>00_预约信_VFS</code></td><td>预约确认信打印件</td></tr>
+        <tr><td>01</td><td><code>01_签证申请表_VIDEX</code></td><td>长期表全套；第 4、5 页手签（条码页一般不签）</td></tr>
+        <tr><td>02</td><td><code>02_证件照片</code></td><td>35×45mm 白底 2 张，或现场二楼拍</td></tr>
+        <tr><td>03</td><td><code>03_护照原件</code></td><td>护照真本（通常收走）</td></tr>
+        <tr><td>04</td><td><code>04_护照信息页复印件</code></td><td>信息页复印</td></tr>
+        <tr><td>05</td><td><code>05_动机说明信</code></td><td>德语动机信，手签</td></tr>
+        <tr><td>06</td><td><code>06_研究计划书</code></td><td>外导确认的终版；勿交旧版草稿</td></tr>
+        <tr><td>07</td><td><code>07_简历</code></td><td>德语简历 + 本硕论文摘要</td></tr>
+        <tr><td>08</td><td><code>08_高校学历学位证书_含在读证明</code></td><td>本硕双证原件+复印+自译；联培加在读证明</td></tr>
+        <tr><td>09</td><td><code>09_接收协议_Hosting_Agreement</code></td><td>HA（与邀请函不是同一份）；申请人栏手签</td></tr>
+        <tr><td>10</td><td><code>10_邀请函</code></td><td>接收机构 / 外导英文邀请函</td></tr>
+        <tr><td>11</td><td><code>11_经济来源证明_CSC</code></td><td>CSC 英文资助证明（建议彩打）</td></tr>
+        <tr><td>12</td><td><code>12_医疗保险</code></td><td>覆盖停留期的保单（如 Care Concept S14）</td></tr>
+        <tr><td>13</td><td><code>13_补充_户口本_可选</code> <span class="tag tag-opt">可选</span></td><td>复印件即可，非硬性</td></tr>
+        <tr><td>14</td><td><code>14_补充_外导CV_可选</code> <span class="tag tag-opt">可选</span></td><td>备用，不主动掏</td></tr>
+        <tr><td>15</td><td><code>15_补充_外语水平证明_可选</code> <span class="tag tag-opt">可选</span></td><td>语言证明</td></tr>
+        <tr><td>16</td><td><code>16_补充_过去签证+居留卡+入境记录_可选</code> <span class="tag tag-opt">可选</span></td><td>旧护照签证页等；有则备</td></tr>
+      </table>
+      <div class="callout c-info">
+        另建议保留两个打印成品夹：<code>_打印套_彩印</code>（≈核验袋）· <code>_打印套_黑白</code>（≈留下袋），以及一份可打印的勾选清单 PDF。
+      </div>
+    </section>
+
+    <section id="bags">
+      <h2>四、两个档案袋 · 原件与复印件</h2>
+      <table>
+        <tr><th>袋</th><th>用途</th><th>内容要点</th></tr>
+        <tr>
+          <td><strong>袋 A</strong></td>
+          <td>原件 / 彩印核验</td>
+          <td>护照收走；学历/在读等核验后退回。HA、邀请函、CSC、保险等有彩就彩打。</td>
+        </tr>
+        <tr>
+          <td><strong>袋 B</strong></td>
+          <td>黑白复印留下</td>
+          <td>通常 <strong>1 套</strong>即可（VIDEX、动机、计划、简历、翻译、各材料副本）。</td>
+        </tr>
+      </table>
+      <ul>
+        <li><span class="tag tag-must">真原件</span>社区共识常提：护照 + 本硕毕业证/学位证；联培再加<strong>在读证明</strong></li>
+        <li>全部<strong>单面</strong>、不装订；曲别针 / 透明袋</li>
+        <li>中文材料可德/英<strong>自译</strong>，一般无需盖章（以 FAQ 为准）</li>
+        <li>HA 多为电子版打印签字即可，不必纠结「纸质原件」</li>
+      </ul>
+    </section>
+
+    <section id="day">
+      <h2>五、上海 VFS 当天流程（实操）</h2>
+      <p>地点：上海市黄浦区四川中路一带 <strong>久事商务大厦</strong>（以预约信为准）。</p>
+      <ol>
+        <li><strong>2 号门门口排队</strong>（建议提早；高峰期队伍会较长）</li>
+        <li>入场前备好三件套：<strong>护照原件 + 证件照 + 预约信</strong></li>
+        <li>安检后上 <strong>4 楼</strong>德签区域；柜台核对后进入里堂等叫号</li>
+        <li>窗口核材料 → 缴费 → 再等叫号 <strong>录指纹</strong></li>
+        <li>一般无外交官式深度面签问答；VIP 可拒</li>
+        <li>护照通常被收走；可选自取或快递返还</li>
+      </ol>
+      <div class="callout c-ok">
+        楼层参考：<strong>2 楼</strong>常可拍照、开发票（CSC 报销）；<strong>4 楼</strong>递交与录指纹。现场可补签 VIDEX / HA / 动机信。
+      </div>
+    </section>
+
+    <section id="fee">
+      <h2>六、费用参考（个案）</h2>
+      <table>
+        <tr><th>项目</th><th>参考</th></tr>
+        <tr><td>签证费 + 快递</td><td>合计约 <strong>662 元</strong>（扫码支付；不同日期汇率/是否选快递会有浮动）</td></tr>
+        <tr><td>VFS 服务费</td><td>预约时已付（以当时页面为准）</td></tr>
+        <tr><td>现场拍照</td><td>约几十元 / 若干张（自备不合格时）</td></tr>
+        <tr><td>VIP</td><td>可选，非必须</td></tr>
+      </table>
+      <p>收据建议保留；CSC 签证费多可报销，发票常在二楼开具。</p>
+    </section>
+
+    <section id="vfs-list">
+      <h2>七、现场收据清单大致会勾什么</h2>
+      <p>递交后会拿到 VFS 的 <em>Visa Application Checklist — Long-term Stay / Researcher</em>。常见勾选项包括：</p>
+      <ol>
+        <li>在线申请表原件（VIDEX）</li>
+        <li>证件照</li>
+        <li>护照原件 + 信息页复印</li>
+        <li>Hosting Agreement（§18d）</li>
+        <li>邀请函</li>
+        <li>资助证明（如 CSC scholarship）</li>
+        <li>简历 CV</li>
+        <li>论文摘要</li>
+        <li>动机信</li>
+        <li>研究计划</li>
+        <li>学历 / 在读证明</li>
+        <li>（条件项：全日制读博 / 已婚随行 / 非中国籍等——多数联培可空）</li>
+        <li>自愿补充材料</li>
+        <li>医疗保险证明</li>
+      </ol>
+      <p>第 2 页为同意声明，现场按要求签字、留电话即可。</p>
+    </section>
+
+    <section id="tips">
+      <h2>八、避坑与勿交</h2>
+      <table>
+        <tr><th>容易错</th><th>建议</th></tr>
+        <tr><td>填短期申根 VIDEX</td><td>用长期 <strong>Langfristiger Aufenthalt</strong></td></tr>
+        <tr><td>预约选成「留学」</td><td>选 <strong>研究人员 / 博士生</strong></td></tr>
+        <tr><td>VFS 用中文输入法填姓名</td><td>英文半角；报错就刷新重来；关 VPN</td></tr>
+        <tr><td>日期互相打架</td><td>拟入境、研究期、保险起期尽量逻辑一致</td></tr>
+        <tr><td>照片尺寸不对</td><td>现场 2 楼重拍；穿深色衣服</td></tr>
+        <tr><td>订书机装订</td><td>改用回形针 / 透明袋</td></tr>
+      </table>
+      <div class="callout c-warn">
+        <strong>一般勿交：</strong>过期旧版研究计划 · APS（研究人员多帖说不需要）· 单独「保险声明」页（保单本身要交）· 无关生活照。户口本多为可选备用。
+      </div>
+      <h3>签字习惯（上海近帖）</h3>
+      <ul>
+        <li>主签与护照一致的<strong>中文姓名</strong>（可旁注拼音）</li>
+        <li>须签：VIDEX 相关页 · HA 申请人栏 · 动机信；简历建议签</li>
+        <li>日期格式注意德式日.月.年</li>
+      </ul>
+    </section>
+
+    <section id="links">
+      <h2>九、官方与社区链接</h2>
+      <ul>
+        <li>德国驻华使馆签证：<a href="https://china.diplo.de/cn-zh/service/visa-einreise" target="_blank" rel="noopener">china.diplo.de</a></li>
+        <li>长期签证 FAQ：<a href="https://china.diplo.de/cn-zh/service/visa-einreise/faq-national-visa-1434978" target="_blank" rel="noopener">faq-national-visa</a></li>
+        <li>研究人员须知 PDF：<a href="https://china.diplo.de/resource/blob/1341654/78d8b273c22b5e1bf3b435d66a511067/pdf-merkblatt-natvisum-forscher-data.pdf" target="_blank" rel="noopener">Merkblatt Forscher</a></li>
+        <li>VIDEX 长期表：<a href="https://videx.diplo.de/videx/visum-erfassung/de/videx-langfristiger-aufenthalt" target="_blank" rel="noopener">videx.diplo.de</a></li>
+        <li>VFS 中国德国签证：<a href="https://visa.vfsglobal.com/chn/zh/deu/" target="_blank" rel="noopener">visa.vfsglobal.com</a></li>
+        <li>社区经验示例（小红书）：<a href="https://www.xiaohongshu.com/explore/6a2951c10000000035038bfd?xsec_token=ABNLoBvm1VTry-O1l5IwcS2FyCPrFE4m-0GU2kTNR49rs=&xsec_source=pc_search" target="_blank" rel="noopener">csc德国联培上海递签</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>本页为匿名公开版攻略 · 不收录护照号、身份证号、完整住址、具体导师与个人签字样式。<br>
+      若需二次传播，请保留「非官方、以官网为准」声明。</p>
+    </footer>
+  </div>
+</body>
+</html>
